@@ -144,7 +144,7 @@
       </ion-card-header>
       <ion-item>
         <p text-center>Press | Pulsa</p>
-        <button ion-button color="primary-light" round block large (click)='getUserPosition()'>{{newSurvey.latitude}}, {{newSurvey.longitude}}</button>
+        <button text-wrap ion-button color="primary-light" round block large (click)='getUserPosition()'>{{newSurvey.latitude}}, {{newSurvey.longitude}}</button>
       </ion-item>
     </ion-card>
 
@@ -219,313 +219,42 @@
           </ion-item>
     </ion-card>
 
-    <!--  Medical Assessment -->
+    <!-- Housing and Urban Infrastructure -->
     <ion-card>
-      <ion-card-header class='card-title'>
-          Medical Evaluacion <!--| Evaluación médica-->
+      <ion-card-header class="card-title">
+        Infrastructure
       </ion-card-header>
       <ion-item-group>
-        <ion-item-divider class='card-subtitle'>
-            Medical History | Historial médico
-        </ion-item-divider>
         <ion-item>
-          <ion-label floating>21. Have you had any surgeries? | Ha tenido cirugías?</ion-label>
-          <ion-input type="text" [(ngModel)]="newSurvey.hadSurgery"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>21.a If so, what kind and when? | Si es así, qué tipo de cirugía y cuándo?</ion-label>
-          <ion-input type="text" [(ngModel)]="newSurvey.surgeryWhatKind"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>22. Do you have any medical illnesses like hypertension, diabetes, etc.? | Tiene una enfermedad crónica como hipertensión, diabetes, etc. </ion-label>
-          <ion-input type="text" [(ngModel)]="newSurvey.medicalIllnesses"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>22.a If so, when were you diagnosed? | Si es así, cuando se la diagnosticaron? </ion-label>
-          <ion-input type="text" [(ngModel)]="newSurvey.whenDiagnosed"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>22.b If so, what doctor do you see about your illness? | Si es así, que doctor se dio cuenta de su enfermedad? </ion-label>
-          <ion-input type="text" [(ngModel)]="newSurvey.whatDoctorDoyousee"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label>22.c If so, did your doctor recommend treatment (medication, etc.) for your condition? | Que  tratamiento le recomendó  (medicamentos, etc) por su condición? </ion-label>
-          <ion-select [(ngModel)]="newSurvey.didDoctorRecommend" interface ='popover'>
-              <ion-option text-wrap value="Y"> Yes | Si </ion-option>
-              <ion-option text-wrap value="N"> No </ion-option>
-              <ion-option text-wrap value="N/A"> Maybe | No Sabe </ion-option>
+          <ion-label>21. What is the condition of the floor in your house? | Cual es la condición del piso  de su casa?</ion-label>
+          <ion-select [(ngModel)]="newSurvey.conditionoFloorinyourhouse" interface ='popover'>
+              <ion-option text-wrap value="dirtPoor"> Dirt Floor and Poor Condition | Tierra y mala condicion  </ion-option>
+              <ion-option text-wrap value="dirtWorking"> Dirt Floor and Working Condition | Tierra regular  </ion-option>
+              <ion-option text-wrap value="cementPoor"> Cement Floor and Poor Condition | Cemento mala condicion </ion-option>
+              <ion-option text-wrap value="cementWorking"> Cement Floor and Working Condition | Cemento Regular  </ion-option>
           </ion-select>
         </ion-item>
+    
         <ion-item>
-          <ion-label floating>22.d If so, what treatment do you do? | Si es así, qué tratamiento  hizo?</ion-label>
-          <ion-input type="text" [(ngModel)]="newSurvey.treatment"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>22.e If so, are you having any problems with your illness? | Está teniendo problemas con su enfermedad?</ion-label>
-          <ion-input type="text" [(ngModel)]="newSurvey.problemswithIllness"></ion-input>
-        </ion-item>
-      
-        <ion-item>
-          <ion-label floating>23. Do you have any medical illnesses like hypertension, diabetes, etc.? | Tiene una enfermedad crónica como hipertensión, diabetes, etc. </ion-label>
-          <ion-input type="text" [(ngModel)]="newSurvey.medicalIllnesses1"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>23.a If so, when were you diagnosed? | Si es así, cuando se la diagnosticaron? </ion-label>
-          <ion-input type="text" [(ngModel)]="newSurvey.whenDiagnosed1"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>23.b If so, what doctor do you see about your illness? | Si es así, que doctor se dio cuenta de su enfermedad? </ion-label>
-          <ion-input type="text" [(ngModel)]="newSurvey.whatDoctorDoyousee1"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label>23.c If so, did your doctor recommend treatment (medication, etc.) for your condition? | Que  tratamiento le recomendó  (medicamentos, etc) por su condición? </ion-label>
-          <ion-select [(ngModel)]="newSurvey.didDoctorRecommend1" interface ='popover'>
-              <ion-option text-wrap value="Y"> Yes | Si </ion-option>
-              <ion-option text-wrap value="N"> No </ion-option>
-              <ion-option text-wrap value="N/A"> Maybe | No Sabe </ion-option>
+          <ion-label>22. What is the condition of the roof in your house? | Cual es la condición de su techo?</ion-label>
+          <ion-select [(ngModel)]="newSurvey.conditionoRoofinyourhouse" interface ='popover'>
+              <ion-option text-wrap value="poor"> Poor Condition | Mala  </ion-option>
+              <ion-option text-wrap value="working"> Working Condition | Regular  </ion-option>
           </ion-select>
         </ion-item>
+    
         <ion-item>
-          <ion-label floating>23.d If so, what treatment do you do? | Si es así, qué tratamiento  hizo?</ion-label>
-          <ion-input type="text" [(ngModel)]="newSurvey.treatment1"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>23.e If so, are you having any problems with your illness? | Está teniendo problemas con su enfermedad?</ion-label>
-          <ion-input type="text" [(ngModel)]="newSurvey.problemswithIllness1"></ion-input>
-        </ion-item>
-
-        <ion-item>
-          <ion-label floating>24. Do you have any medical illnesses like hypertension, diabetes, etc.? | Tiene una enfermedad crónica como hipertensión, diabetes, etc. </ion-label>
-          <ion-input type="text" [(ngModel)]="newSurvey.medicalIllnesses2"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>24.a If so, when were you diagnosed? | Si es así, cuando se la diagnosticaron? </ion-label>
-          <ion-input type="text" [(ngModel)]="newSurvey.whenDiagnosed2"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>24.b If so, what doctor do you see about your illness? | Si es así, que doctor se dio cuenta de su enfermedad? </ion-label>
-          <ion-input type="text" [(ngModel)]="newSurvey.whatDoctorDoyousee2"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label>24.c If so, did your doctor recommend treatment (medication, etc.) for your condition? | Que  tratamiento le recomendó  (medicamentos, etc) por su condición? </ion-label>
-          <ion-select [(ngModel)]="newSurvey.didDoctorRecommend2" interface ='popover'>
-              <ion-option text-wrap value="Y"> Yes | Si </ion-option>
-              <ion-option text-wrap value="N"> No </ion-option>
-              <ion-option text-wrap value="N/A"> Maybe | No Sabe </ion-option>
+          <ion-label>23. Are there Available Trash Management and Disposal Services? | Hay servicios para la recogida de basura?</ion-label>
+          <ion-select [(ngModel)]="newSurvey.availableTrashManagementandDisposalServices" interface ='popover'>
+              <ion-option text-wrap value="Yes"> Yes | Si </ion-option>
+              <ion-option text-wrap value="No"> No </ion-option>
           </ion-select>
         </ion-item>
+    
         <ion-item>
-          <ion-label floating>24.d If so, what treatment do you do? | Si es así, qué tratamiento  hizo?</ion-label>
-          <ion-input type="text" [(ngModel)]="newSurvey.treatment2"></ion-input>
+          <ion-label floating>24. What is the Trash Disposal Location? | Donde deja su basura?</ion-label>
+          <ion-input type="text" [(ngModel)]="newSurvey.trashDisposalLocation"></ion-input>
         </ion-item>
-        <ion-item>
-          <ion-label floating>24.e If so, are you having any problems with your illness? | Está teniendo problemas con su enfermedad?</ion-label>
-          <ion-input type="text" [(ngModel)]="newSurvey.problemswithIllness2"></ion-input>
-        </ion-item>
-      </ion-item-group>
-
-
-      <ion-item-group>
-        <ion-item-divider class='card-subtitle'>
-            Only For Women > 12 | Solo mujeres que tiene menos que 12 años
-        </ion-item-divider>
-        <ion-item>
-          <ion-label>25. Are you currently pregnant? | Está actualmente embarazada?</ion-label>
-          <ion-select [(ngModel)]="newSurvey.pregnantCurrently" interface ='popover'>
-              <ion-option text-wrap value="Y"> Yes | Si</ion-option>
-              <ion-option text-wrap value="N"> No </ion-option>
-              <ion-option text-wrap value="N/A"> Not Sure | No Sabe </ion-option>
-          </ion-select>
-        </ion-item>
-        <ion-item>
-          <ion-label>26. If so, do you have access to pre-natal vitamins? | Si es asi, tiene acceso a vitaminas prenatales? </ion-label>
-          <ion-select [(ngModel)]="newSurvey.takesprenatal" interface ='popover'>
-              <ion-option text-wrap value="Y"> Yes | Si </ion-option>
-              <ion-option text-wrap value="N"> No </ion-option>
-              <ion-option text-wrap value="N/A"> Not Sure | No Sabe </ion-option>
-          </ion-select>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>27. If not, what are the problems? | Si no, cuál es el problema?</ion-label>
-          <ion-input type="text" [(ngModel)]="newSurvey.reasonfornottakingprenatal"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>28. Where do you plan to deliver your baby? | Dónde planea darle a luz a su bebé?</ion-label>
-          <ion-input type="text" [(ngModel)]="newSurvey.locationtodeliverbaby"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>29. Why did you choose that location? | Por qué eligió ese lugar?</ion-label>
-          <ion-input type="text" [(ngModel)]="newSurvey.reasonforlocationtodeliverbaby"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label>30. Have you ever been pregnant? | Ha estado alguna vez embarazada? </ion-label>
-          <ion-select [(ngModel)]="newSurvey.haveyoueverbeenpregnant" interface ='popover'>
-              <ion-option text-wrap value="Y"> Yes | Si </ion-option>
-              <ion-option text-wrap value="N"> No </ion-option>
-              <ion-option text-wrap value="N/A"> Not Sure | No Sabe </ion-option>
-          </ion-select>
-        </ion-item>
-        <ion-item>
-          <ion-label>31. If so, did you have access to pre-natal vitamins? | Si es así, tenía acceso a vitaminas prenatales?</ion-label>
-          <ion-select [(ngModel)]="newSurvey.accesstoPrenatalVitamins" interface ='popover'>
-              <ion-option text-wrap value="Y"> Yes | Si </ion-option>
-              <ion-option text-wrap value="N"> No </ion-option>
-              <ion-option text-wrap value="N/A"> Not Sure | No Sabe </ion-option>
-          </ion-select>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>32. If not, what were the problems? | Si no, por qué razón? </ion-label>
-          <ion-input type="text" [(ngModel)]="newSurvey.reasonfornoaccesstoprenatal"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>33. If so, where did you deliver your babies? | Si es así, dónde dio la luz?</ion-label>
-          <ion-input type="text" [(ngModel)]="newSurvey.wheredidyoudeliver"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label>34. Does your salt have iodine in it? | Usa sal con yodo?</ion-label>
-          <ion-select [(ngModel)]="newSurvey.salthaveiodine" interface ='popover'>
-              <ion-option text-wrap value="Y"> Yes | Si </ion-option>
-              <ion-option text-wrap value="N"> No </ion-option>
-              <ion-option text-wrap value="N/A"> Not Sure | No Sabe </ion-option>
-          </ion-select>
-        </ion-item>
-        <ion-item>
-          <ion-label>35. Have you had the HPV vaccine? | Ha tenido la vacuna HPV?</ion-label>
-          <ion-select [(ngModel)]="newSurvey.hadHPVVaccine" interface ='popover'>
-              <ion-option text-wrap value="Y"> Yes | Si </ion-option>
-              <ion-option text-wrap value="N"> No </ion-option>
-              <ion-option text-wrap value="N/A"> Not Sure | No Sabe </ion-option>
-          </ion-select>
-        </ion-item>
-        <ion-item>
-          <ion-label>36. Could you tell me why iodine is important for in their diet? | Puede decirme por qué yodo es importante para su dieta? </ion-label>
-          <ion-select [(ngModel)]="newSurvey.tellmeimportanceofiodine" interface ='popover'>
-              <ion-option text-wrap value="Y"> Yes | Si </ion-option>
-              <ion-option text-wrap value="N"> No </ion-option>
-              <ion-option text-wrap value="N/A"> Not Sure | No Sabe </ion-option>
-          </ion-select>
-        </ion-item>
-      </ion-item-group>
-
-      <ion-item-group>
-        <ion-item-divider class='card-subtitle'>
-            Medical Assessment | Examen medico
-        </ion-item-divider>
-        <ion-item>
-          <ion-label floating>37. Do you have any current medical concerns? | Tiene las  preocupaciones médicas?</ion-label>
-          <ion-input type="text" [(ngModel)]="newSurvey.doyouhavemedicalconcerns"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label floating> 38. Blood Pressure | La presión arterial</ion-label>
-          <ion-input type="text" [(ngModel)]="newSurvey.bloodPressure"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>39. Blood Sugar | Nivel de azúcar</ion-label>
-          <ion-input type="number" [(ngModel)]="newSurvey.bloodSuger"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>40. Hemoglobin level | Nivel hemoglobina</ion-label>
-          <ion-input type="number" [(ngModel)]="newSurvey.hemoglobinLevel"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>41. Height  | Altura </ion-label>
-          <ion-input type="number" [(ngModel)]="newSurvey.height"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>44. Physical Findings: | resultados físicos</ion-label>
-          <ion-textarea type="text" [(ngModel)]="newSurvey.physicalFindings"></ion-textarea>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>45. Assessment | Evaluación </ion-label>
-          <ion-textarea type="text" [(ngModel)]="newSurvey.AssessmentandEvaluation"></ion-textarea>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>46. Plan | El plan</ion-label>
-          <ion-textarea type="text" [(ngModel)]="newSurvey.planOfAction"></ion-textarea>
-        </ion-item>
-        <ion-item>
-          <ion-label floating>47. Extra notes | Notas extras </ion-label>
-          <ion-textarea type="text" [(ngModel)]="newSurvey.notes"></ion-textarea>
-        </ion-item>
-      </ion-item-group>
-    </ion-card>
-
-    <!--  Dental Assessment  -->
-    <ion-card>
-      <ion-card-header class='card-title'>
-        Dental Evaluation <!--| Evaluación dental -->
-      </ion-card-header>
-      <ion-item-group>
-          <ion-item>
-            <ion-label>48. Do you have a toothbrush? | Tiene un cepillo de dientes?</ion-label>
-            <ion-select [(ngModel)]="newSurvey.haveToothbrush" interface ='popover'>
-              <ion-option text-wrap value="Y"> Yes | Si </ion-option>
-              <ion-option text-wrap value="N"> No </ion-option>
-              <ion-option text-wrap value="N/A"> Not sure | No sabe</ion-option>
-            </ion-select>
-          </ion-item>
-          <ion-item>
-            <ion-label>49. How often do you brush? | Con qué frecuencia se lava los dientes?</ion-label>
-            <ion-select [(ngModel)]="newSurvey.howoftenbrushteeth" interface ='popover'>
-              <ion-option text-wrap value="lessThan1"> Less than once a day | Menos que una vez por día </ion-option>
-              <ion-option text-wrap value="onceAday"> Once a day | Una vez por día </ion-option>
-              <ion-option text-wrap value="moreThanOnceADay"> More than once a day | Mas que una vez por día </ion-option>
-              <ion-option text-wrap value="N/A"> Not sure | No sabe </ion-option>
-            </ion-select>
-          </ion-item>
-          <ion-item>
-            <ion-label>50. How many times a day do you drink sugary drinks? | Cuántas veces al día  toma bebidas azucaradas? (refresco, jugo, café con azúcar, etc) </ion-label>
-            <ion-select [(ngModel)]="newSurvey.howmanysugarydrinks" interface ='popover'>
-                <ion-option text-wrap value="lessThan1aDay"> Less than 1 per day | Menos que una vez al día </ion-option>
-                <ion-option text-wrap value="1-2 a day"> 1 - 2 per day | 1-2 por día </ion-option>
-                <ion-option text-wrap value="2-4 per day"> 2 - 4 per day | 2-4 por día </ion-option>
-                <ion-option text-wrap value="More than 4 per day"> More than 4 per day | Mas que 4 por día </ion-option>
-            </ion-select>
-          </ion-item>
-        <ion-item>
-            <ion-label>51. Do you have any cavities? | Tiene caries? </ion-label>
-            <ion-select [(ngModel)]="newSurvey.doyouhavecavities" interface ='popover'>
-              <ion-option text-wrap value="Y"> Yes | Si</ion-option>
-              <ion-option text-wrap value="N"> No </ion-option>
-            </ion-select>
-          </ion-item>
-          <ion-item>
-              <ion-label>52. Have you had any cavities? | Alguna vez ha tenido caries? </ion-label>
-              <ion-select [(ngModel)]="newSurvey.haveyouhadcavities" interface ='popover'>
-                <ion-option text-wrap value="Y"> Yes | Si</ion-option>
-                <ion-option text-wrap value="N"> No </ion-option>
-              </ion-select>
-          </ion-item>
-            <ion-item>
-                <ion-label>53. Have you had any teeth pulled? | Le han sacado dientes? </ion-label>
-                <ion-select [(ngModel)]="newSurvey.toothPulledout" interface ='popover'>
-                  <ion-option text-wrap value="Y"> Yes | Si</ion-option>
-                  <ion-option text-wrap value="N"> No </ion-option>
-                </ion-select>
-            </ion-item> 
-            <ion-item>
-                <ion-label>54. Do you currently have any mouth pain? | Actualmente tiene algún dolor en la  boca?  </ion-label>
-                <ion-select [(ngModel)]="newSurvey.haveMouthPain" interface ='popover'>
-                  <ion-option text-wrap value="Y"> Yes | Si</ion-option>
-                  <ion-option text-wrap value="N"> No </ion-option>
-                </ion-select>
-            </ion-item>
-            <ion-item>
-                <ion-label floating>55. General dental findings | Los resultados dentales </ion-label>
-                <ion-textarea type="number" [(ngModel)]="newSurvey.dentalFindings"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label floating>56. Assessment | Evaluación </ion-label>
-                <ion-textarea type="text" [(ngModel)]="newSurvey.AssessmentandEvaluationDental"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label floating>57. Dental Plan | El plan</ion-label>
-                <ion-textarea type="text" [(ngModel)]="newSurvey.planOfActionDental"></ion-textarea>
-              </ion-item>
-              <ion-item>
-                <ion-label floating>58. Extra notes | Notas extras </ion-label>
-                <ion-textarea type="text" [(ngModel)]="newSurvey.notesDental"></ion-textarea>
-              </ion-item>  
       </ion-item-group>
     </ion-card>
 

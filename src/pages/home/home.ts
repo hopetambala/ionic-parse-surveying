@@ -41,6 +41,7 @@ export class HomePage {
     yearsLivedinthecommunity: null,
     yearsLivedinThisHouse: null,
     memberofthefollowingorganizations: null,
+    cedulaNumber:null,
 
     latitude: null,
     longitude: null,
@@ -56,6 +57,19 @@ export class HomePage {
     dentalproblemswheredoyougo: null,
     lastimeyouwenttodentist: null,
 
+    conditionoFloorinyourhouse: null,
+    conditionoRoofinyourhouse: null,
+    availableTrashManagementandDisposalServices: null,
+    trashDisposalLocation: null,
+    /*
+    immediateCare: null,
+    biggestProblemintheimmediatecommunity: null,
+    howCanweaddressandimprovethesituation: null,
+    otherOrganizationsYouKnow: null,
+    dayMostConvenient: null,
+    hourMostConvenient: null,
+
+    
     hadSurgery: null,
     surgeryWhatKind: null,
 
@@ -115,6 +129,7 @@ export class HomePage {
     AssessmentandEvaluationDental: null,
     planOfActionDental: null,
     notesDental: null,
+    */
     
     surveyingUser: this.auth.currentUser().name,
     surveyingOrganization: this.auth.currentUser().organization

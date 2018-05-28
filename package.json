@@ -20,7 +20,7 @@
     "@ionic/app-scripts": "^3.1.9",
     "@ionic/storage": "2.0.1",
     "cordova-android": "7.0.0",
-    "cordova-browser": "^4.1.0",
+    "cordova-ios": "~4.5.4",
     "cordova-plugin-console": "^1.1.0",
     "cordova-plugin-device": "^1.1.7",
     "cordova-plugin-geolocation": "^4.0.1",
@@ -37,7 +37,7 @@
     "rxjs": "5.1.1",
     "sw-toolbox": "3.6.0",
     "zone.js": "0.8.10",
-    "cordova-ios": "~4.5.4"
+    "cordova-browser": "~5.0.3"
   },
   "devDependencies": {
     "typescript": "2.2.1"
@@ -55,9 +55,9 @@
       }
     },
     "platforms": [
-      "browser",
       "android",
-      "ios"
+      "ios",
+      "browser"
     ]
   },
   "cordovaPlugins": [],
