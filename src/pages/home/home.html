@@ -27,342 +27,265 @@
         refreshingText="Refreshing...">
       </ion-refresher-content>
     </ion-refresher>
-  <ion-list text-wrap overflow-scroll="true">
-    <!--Title -->
-    <ion-item-divider color="primary-light">
-      Demographics | Demografía
-    </ion-item-divider>
+  
+    <!--Demographics -->
+    <ion-card>
+        <ion-card-header class = 'card-title' color="primary-light">
+          Demographics <!--| Demográficos-->
+        </ion-card-header>
+        <ion-list>  
+        <ion-item>
+          <ion-label floating>1. First Name | Nombre</ion-label>
+          <ion-input type="text" [(ngModel)]="newSurvey.fname"></ion-input>
+        </ion-item>
 
-    <ion-item>
-      <ion-label floating>First Name | Nombre</ion-label>
-      <ion-input type="text" [(ngModel)]="newSurvey.fname"></ion-input>
-    </ion-item>
+        <ion-item>
+          <ion-label floating>2. Last Name | Apellido</ion-label>
+          <ion-input type="text" [(ngModel)]="newSurvey.lname"></ion-input>
+        </ion-item>
 
-    <ion-item>
-      <ion-label floating>Last Name | Apellido</ion-label>
-      <ion-input type="text" [(ngModel)]="newSurvey.lname"></ion-input>
-    </ion-item>
+        <ion-item>
+          <ion-label>3. Date of Birth | Fecha de Nacimiento</ion-label>
+          <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="newSurvey.dob"></ion-datetime>
+        </ion-item>
 
-    <ion-item>
-      <ion-label>Date of Birth | Fecha de Nacimiento</ion-label>
-      <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="newSurvey.dob"></ion-datetime>
-    </ion-item>
+        <ion-item>
+            <ion-label>4. Sex | Sexo</ion-label>
+            <ion-select [(ngModel)]="newSurvey.sex" interface ='popover'>
+                <ion-option value="Male"> Male | Varon </ion-option>
+                <ion-option value="Female"> Female | Hembra </ion-option>
+            </ion-select>
+          </ion-item>
 
-    <ion-item>
-      <ion-label>Sex | Sexo</ion-label>
-      <ion-select [(ngModel)]="newSurvey.sex" interface ='popover'>
-          <ion-option value="Male"> Male | Varon </ion-option>
-          <ion-option value="Female"> Female | Hembra </ion-option>
-      </ion-select>
-    </ion-item>
+          <ion-item>
+            <ion-label floating>5. Telephone Number | Numero de telefono</ion-label>
+            <ion-input type="tel" [(ngModel)]="newSurvey.telephoneNumber"></ion-input>
+          </ion-item>
 
-    <ion-item>
-      <ion-label floating>Phone Number</ion-label>
-      <ion-input type="tel" [(ngModel)]="newSurvey.telephoneNumber"></ion-input>
-    </ion-item>
+          <ion-item>
+            <ion-label >6. Marriage Status | Estado civil</ion-label>
+            <ion-select  [(ngModel)]="newSurvey.marriageStatus" interface ='popover'>
+                <ion-option  value="single"> Single | Solter@ </ion-option>
+                <ion-option  value="married"> Married | Casad@ </ion-option>
+                <ion-option  value="concubine"> Concubine | Concubina </ion-option>
+                <ion-option  value="widow"> Widow | Viuda </ion-option>
+            </ion-select>
+          </ion-item>
 
-    <ion-item>
-      <ion-label >Marriage Status | Estado civil</ion-label>
-      <ion-select  [(ngModel)]="newSurvey.marriageStatus" interface ='popover'>
-          <ion-option  value="single"> Single | Solter@ </ion-option>
-          <ion-option  value="married"> Married | Casad@ </ion-option>
-          <ion-option  value="concubine"> Concubine | Concubina </ion-option>
-          <ion-option  value="widow"> Widow | Viuda </ion-option>
-      </ion-select>
-    </ion-item>
+          <ion-item>
+            <ion-label floating>7. Number of Individuals Living in the House | Numero de personas en la casa</ion-label>
+            <ion-input type="number" [(ngModel)]="newSurvey.numberofIndividualsLivingintheHouse"></ion-input>
+          </ion-item>
 
-    <ion-item>
-      <ion-label floating>Number of Individuals Living in the House | Numero de personas en la casa</ion-label>
-      <ion-input type="number" [(ngModel)]="newSurvey.numberofIndividualsLivingintheHouse"></ion-input>
-    </ion-item>
+          <ion-item>
+            <ion-label floating>8. Number of Children Living in House Under the Age of 5 | Número de hijos menores de 5 años en la casa</ion-label>
+            <ion-input type="number" [(ngModel)]="newSurvey.numberofChildrenLivinginHouseUndertheAgeof5"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label floating>9. Occupation</ion-label>
+            <ion-input type="text" [(ngModel)]="newSurvey.occupation"></ion-input>
+          </ion-item>
 
-    <ion-item>
-      <ion-label floating>Number of Children Living in House Under the Age of 5 | Número de hijos menores de 5 años en la casa</ion-label>
-      <ion-input type="number" [(ngModel)]="newSurvey.numberofChildrenLivinginHouseUndertheAgeof5"></ion-input>
-    </ion-item>
-    
-    <ion-item>
-      <ion-label floating>Occupation</ion-label>
-      <ion-input type="text" [(ngModel)]="newSurvey.occupation"></ion-input>
-    </ion-item>
+          <ion-item>
+            <ion-label>10. Education Level | Nivel de educacion</ion-label>
+            <ion-select text-wrap [(ngModel)]="newSurvey.educationLevel" interface ='popover'>
+                <ion-option text-wrap value="lessThanprimary"> Less than Primary | Primaria no terminada</ion-option>
+                <ion-option text-wrap value="primary"> Primary | Primaria  </ion-option>
+                <ion-option text-wrap value="someHighSchool"> Some High School | Liceo sin terminar</ion-option>
+                <ion-option text-wrap value="highschool"> High School | Bachiller</ion-option>
+                <ion-option text-wrap value="someCollege"> Some College | Otra educacion superior</ion-option>
+                <ion-option text-wrap value="college"> College | Universidad</ion-option>
+            </ion-select>
+          </ion-item>
 
-    <ion-item>
-      <ion-label>Education Level | Nivel de educacion</ion-label>
-      <ion-select text-wrap [(ngModel)]="newSurvey.educationLevel" interface ='popover'>
-          <ion-option text-wrap value="lessThanprimary"> Less than Primary | Primaria no terminada</ion-option>
-          <ion-option text-wrap value="primary"> Primary | Primaria  </ion-option>
-          <ion-option text-wrap value="someHighSchool"> Some High School | Liceo sin terminar</ion-option>
-          <ion-option text-wrap value="highschool"> High School | Bachiller</ion-option>
-          <ion-option text-wrap value="someCollege"> Some College | Otra educacion superior</ion-option>
-          <ion-option text-wrap value="college"> College | Universidad</ion-option>
-      </ion-select>
-    </ion-item>
+          <ion-item>
+            <ion-label>11. Name of Community | Nombre de Comunidad</ion-label>
+            <ion-input type="text" [(ngModel)]="newSurvey.communityname"></ion-input>
+          </ion-item>
 
-    <ion-item>
-      <ion-label>Name of Community | Nombre de Comunidad</ion-label>
-      <ion-input type="text" [(ngModel)]="newSurvey.communityname"></ion-input>
-    </ion-item>
+          <ion-item>
+            <ion-label>12. Years Lived in the community | Años viviendo en la comunidad</ion-label>
+            <ion-select [(ngModel)]="newSurvey.yearsLivedinthecommunity" interface ='popover'>
+                <ion-option text-wrap value="lessThan1"> Less Than 1 Year | Menos que 1 año </ion-option>
+                <ion-option text-wrap value="1-2"> 1-2 Years | 1-2 años  </ion-option>
+                <ion-option text-wrap value="3-4"> 3-4 Years | 3-4 años  </ion-option>
+                <ion-option text-wrap value="5-10"> 5-10 Years | 5-10 años </ion-option>
+                <ion-option text-wrap value="moreThan10"> >10 Years | 10 años  </ion-option>
+              </ion-select>
+          </ion-item>
 
-    <ion-item>
-      <ion-label>Years Lived in the community | Años viviendo en la comunidad</ion-label>
-      <ion-select [(ngModel)]="newSurvey.yearsLivedinthecommunity" interface ='popover'>
-          <ion-option text-wrap value="lessThan1"> Less Than 1 Year | Menos que 1 año </ion-option>
-          <ion-option text-wrap value="1-2"> 1-2 Years | 1-2 años  </ion-option>
-          <ion-option text-wrap value="3-4"> 3-4 Years | 3-4 años  </ion-option>
-          <ion-option text-wrap value="5-10"> 5-10 Years | 5-10 años </ion-option>
-          <ion-option text-wrap value="moreThan10"> >10 Years | 10 años  </ion-option>
-        </ion-select>
-    </ion-item>
+          <ion-item>
+            <ion-label>12.a Years Lived in this house | Años viviendo en este casa</ion-label>
+            <ion-select [(ngModel)]="newSurvey.yearsLivedinThisHouse" interface ='popover'>
+                <ion-option text-wrap value="lessThan1"> Less Than 1 Year | Menos que 1 año </ion-option>
+                <ion-option text-wrap value="1-2"> 1-2 Years | 1-2 años  </ion-option>
+                <ion-option text-wrap value="3-4"> 3-4 Years | 3-4 años  </ion-option>
+                <ion-option text-wrap value="5-10"> 5-10 Years | 5-10 años </ion-option>
+                <ion-option text-wrap value="moreThan10"> >10 Years | 10 años  </ion-option>
+              </ion-select>
+          </ion-item>
 
-    <ion-item>
-      <ion-label>Are you a member of the following organizations? | Sigue alguna organización?</ion-label>
-      <ion-select [(ngModel)]="newSurvey.memberofthefollowingorganizations" multiple="true">
-        <ion-option text-wrap value="juntaDeVecino">Junta de Vecino</ion-option>
-        <ion-option text-wrap value="ProgresandoConSolidaridad">Progresando con Solidaridad</ion-option>
-        <ion-option text-wrap value="Iglesia">Iglesia</ion-option>
-      </ion-select>
-    </ion-item> 
+          <ion-item>
+            <ion-label>13. Are you a member of the following organizations? | Sigue alguna organización?</ion-label>
+            <ion-select [(ngModel)]="newSurvey.memberofthefollowingorganizations" multiple="true">
+              <ion-option text-wrap value="juntaDeVecino">Junta de Vecino</ion-option>
+              <ion-option text-wrap value="ProgresandoConSolidaridad">Progresando con Solidaridad</ion-option>
+              <ion-option text-wrap value="Iglesia">Iglesia</ion-option>
+            </ion-select>
+          </ion-item> 
+        </ion-list>
+    </ion-card>
 
     <!--  Latitude and Longitude  -->
-    <ion-item-divider color="primary-light">
-      Location | Ubicación
-    </ion-item-divider>
-    <ion-item>
-      <p text-center>Press | Pulsa</p>
-      <button ion-button color="primary-light" round block large (click)='getUserPosition()'>{{newSurvey.latitude}}, {{newSurvey.longitude}}</button>
-    </ion-item>
-
-    <!--  Health  -->
-    <ion-item-divider color="primary-light">
-      Health | Salud
-    </ion-item-divider>
-
-    <ion-item>
-      <ion-label>What Type of Health insurance Do you Have? | Que clase de seguro social tiene?</ion-label>
-      <ion-select [(ngModel)]="newSurvey.typeofHealthinsuranceDoyouHave" interface ='popover'>
-          <ion-option text-wrap value="public"> Public | Publico </ion-option>
-          <ion-option text-wrap value="private"> Private | Privado </ion-option>
-          <ion-option text-wrap value="neither"> Neither | Ninguno </ion-option>
-      </ion-select>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>What is the Frequency of Your Medical Visits | Con que frecuencia visita al médico?</ion-label>
-      <ion-select [(ngModel)]="newSurvey.frequencyofYourMedicalVisits" interface ='popover'>
-          <ion-option text-wrap value="twiceAyear"> Twice a year | Dos veces al año  </ion-option>
-          <ion-option text-wrap value="onceAyear"> Once a year | una vez al año </ion-option>
-          <ion-option text-wrap value="onceEvery1-2years"> Once every 1-2 years | Una vez cada uno o dos años  </ion-option>
-          <ion-option text-wrap value="lessThanOnceEvery2years"> Less than once every 2 years | Menos de una vez cada dos años  </ion-option>
-          <ion-option text-wrap value="Never"> Never | Nunca   </ion-option>
-
-        </ion-select>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Do you have a family history of any of the following? | Historia familiar? </ion-label>
-      <ion-select [(ngModel)]="newSurvey.familyhistory" multiple="true" interface ='popover'>
-        <ion-option text-wrap value="diabetes">Diabetes | Diabetes</ion-option>
-        <ion-option text-wrap value="alcoholism">Alcoholism | Alcoholismo</ion-option>
-        <ion-option text-wrap value="breastcancler">Breast Cancer | Cancer de mama</ion-option>
-        <ion-option text-wrap value="prostatecancer">Prostate Cancer | Cancer de prostata</ion-option>
-        <ion-option text-wrap value="mentaldisease">Mental Disease | Problemas mentales</ion-option>
-      </ion-select>
-    </ion-item>
-
-    <ion-item>
-      <ion-label text-wrap>Do you have a Diagnosis from a doctor for any of the following? | Le han diagnosticado algunas de las siguientes enfermedades </ion-label>
-      <ion-select [(ngModel)]="newSurvey.diagnosisfromadoctor" multiple="true"  interface ='popover'>
-        <ion-option text-wrap value="diabetes">Diabetes | Diabetes</ion-option>
-        <ion-option text-wrap value="cardiac">Cardiac problems | Problemas cardiacos </ion-option>
-        <ion-option text-wrap value="respiratory">Respiratory Problems | Problemas respiratorios</ion-option>
-      </ion-select>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Do you see a problem with sexually transmitted diseases in your community? | A visto problemas de transmisión sexual es su comunidad?</ion-label>
-      <ion-select [(ngModel)]="newSurvey.sexuallytransmitteddiseasesinyourcommunity" interface ='popover'>
-          <ion-option text-wrap value="Yes"> Yes | Si </ion-option>
-          <ion-option text-wrap value="No"> No</ion-option>
-      </ion-select>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Is Teenage pregnancy prevalent in your community? | Es frecuente el embarazo adolescente en su comunidad?</ion-label>
-      <ion-select [(ngModel)]="newSurvey.teenagePregnancyprevalentinyourcommunity" interface ='popover'>
-          <ion-option text-wrap value="Yes"> Yes | Si </ion-option>
-          <ion-option text-wrap value="No"> No </ion-option>
-      </ion-select>
-    </ion-item>
+    <ion-card>
+      <ion-card-header class='card-title'>
+        Location <!--| Ubicación-->
+      </ion-card-header>
+      <ion-item>
+        <p text-center>Press | Pulsa</p>
+        <button text-wrap ion-button color="primary-light" round block large (click)='getUserPosition()'>{{newSurvey.latitude}}, {{newSurvey.longitude}}</button>
+      </ion-item>
+    </ion-card>
 
     <!--  Accessibility -->
-    <ion-item-divider color="primary-light">
-      Accessibility | Acceso
-    </ion-item-divider>
-    <ion-item>
-      <ion-label>How often do you have access to water? | Cuántas veces tiene acceso al agua? </ion-label>
-      <ion-select [(ngModel)]="newSurvey.waterAccess" interface ='popover'>
-          <ion-option text-wrap value="everyday"> Everyday | Todos los dias  </ion-option>
-          <ion-option text-wrap value="4-6AWeek"> 4-6 days a week | 4-6 dias a la semana  </ion-option>
-          <ion-option text-wrap value="2-3AWeek"> 2-3 days per week | 2-3 dias a la semana  </ion-option>
-          <ion-option text-wrap value="1AWeek"> Less than Or Equal to 1 Day per week  | 1 dia a la semana  </ion-option>
-          <ion-option text-wrap value="1AMonth"> 1 Day per month | 1 dia al mes  </ion-option>
-          <ion-option text-wrap value="Never"> Never | Nunca </ion-option>
-      </ion-select>
-    </ion-item>
+    <ion-card>
+        <ion-card-header class='card-title'>
+          Accessibility <!--| Acceso -->
+        </ion-card-header>
+        <ion-item>
+          <ion-label>14. How often do you have access to water? | Cuántas veces tiene acceso al agua? </ion-label>
+          <ion-select [(ngModel)]="newSurvey.waterAccess" interface ='popover'>
+              <ion-option text-wrap value="everyday"> Everyday | Todos los dias  </ion-option>
+              <ion-option text-wrap value="4-6AWeek"> 4-6 days a week | 4-6 dias a la semana  </ion-option>
+              <ion-option text-wrap value="2-3AWeek"> 2-3 days per week | 2-3 dias a la semana  </ion-option>
+              <ion-option text-wrap value="1AWeek"> Less than Or Equal to 1 Day per week  | 1 dia a la semana  </ion-option>
+              <ion-option text-wrap value="1AMonth"> 1 Day per month | 1 dia al mes  </ion-option>
+              <ion-option text-wrap value="Never"> Never | Nunca </ion-option>
+          </ion-select>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label>15. What type of water do you drink? | Que tipo de agua toma?</ion-label>
+          <ion-select [(ngModel)]="newSurvey.typeofWaterdoyoudrink" interface ='popover'>
+              <ion-option text-wrap value="bottled"> Bottled | Botellon </ion-option>
+              <ion-option text-wrap value="tap"> Tap | Llave  </ion-option>
+          </ion-select>
+        </ion-item>
 
-    <ion-item>
-      <ion-label>What type of water do you drink? | Que tipo de agua toma?</ion-label>
-      <ion-select [(ngModel)]="newSurvey.typeofWaterdoyoudrink" interface ='popover'>
-          <ion-option text-wrap value="bottled"> Bottled | Botellon </ion-option>
-          <ion-option text-wrap value="tap"> Tap | Llave  </ion-option>
-      </ion-select>
-    </ion-item>
+        <ion-item>
+            <ion-label>16. Do you have access to a latrine? | Tiene acceso a una letrina o baño? </ion-label>
+            <ion-select [(ngModel)]="newSurvey.latrineAccess" interface ='popover'>
+                <ion-option text-wrap value="Y"> Yes | Si </ion-option>
+                <ion-option text-wrap value="N"> No </ion-option>
+            </ion-select>
+          </ion-item>
 
-    <ion-item>
-      <ion-label>Do you have clinic access? | Tiene acceso a una clinica o un hospital?</ion-label>
-      <ion-select [(ngModel)]="newSurvey.clinicAccess" interface ='popover'>
-          <ion-option text-wrap value="Yes"> Yes | Si </ion-option>
-          <ion-option text-wrap value="No"> No </ion-option>
-      </ion-select>
-    </ion-item>
+          <ion-item>
+              <ion-label>17. What Type of Health insurance Do you Have? | Que clase de seguro social tiene?</ion-label>
+              <ion-select [(ngModel)]="newSurvey.typeofHealthinsuranceDoyouHave" interface ='popover'>
+                  <ion-option text-wrap value="public"> Public | Publico </ion-option>
+                  <ion-option text-wrap value="private"> Private | Privado </ion-option>
+                  <ion-option text-wrap value="neither"> Neither | Ninguno </ion-option>
+              </ion-select>
+          </ion-item>
+          
+          <ion-item>
+              <ion-label>18. Do you have clinic access? | Tiene acceso a una clinica o un hospital?</ion-label>
+              <ion-select [(ngModel)]="newSurvey.clinicAccess" interface ='popover'>
+                  <ion-option text-wrap value="Y"> Yes | Si </ion-option>
+                  <ion-option text-wrap value="N"> No </ion-option>
+              </ion-select>
+          </ion-item>
 
-    <ion-item>
-      <ion-label>What is the quality of the clinic service? | Cual es la calidad de los servicios del hospital?</ion-label>
-      <ion-select [(ngModel)]="newSurvey.qualityClinicService" interface ='popover'>
-          <ion-option text-wrap value="good"> Working | Buena  </ion-option>
-          <ion-option text-wrap value="bad"> Poor | Mala  </ion-option>
-          <ion-option text-wrap value="n/a"> I don’t know | No se  </ion-option>
-      </ion-select>
-    </ion-item>
+          <ion-item>
+            <ion-label floating>19. When you have medical problems, where do you go for help? | Cuándo tiene problemas médicos, dónde va?</ion-label>
+            <ion-input type="text" [(ngModel)]="newSurvey.medicalproblemswheredoyougo"></ion-input>
+          </ion-item>
 
-    <ion-item>
-      <ion-label>Do you have access to a latrine? | Tiene acceso a una letrina o baño? </ion-label>
-      <ion-select [(ngModel)]="newSurvey.latrineAccess" interface ='popover'>
-          <ion-option text-wrap value="Yes"> Yes | Si </ion-option>
-          <ion-option text-wrap value="No"> No </ion-option>
-      </ion-select>
-    </ion-item>
+          <ion-item>
+            <ion-label floating>19.a When was the last time you went to a doctor?  | Cuándo fue la ultima vez que visitó un medico</ion-label>
+            <ion-input type="text" [(ngModel)]="newSurvey.lastimeyouwenttodoctor"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>20. When you have dental problems, where do you go for help? | Cuándo tiene problemas dentales, dónde va? </ion-label>
+            <ion-input type="text" [(ngModel)]="newSurvey.dentalproblemswheredoyougo"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>20.a When was the last time you went to a dentist?  | Cuándo fue la ultima vez que visitó un dentista</ion-label>
+            <ion-input type="text" [(ngModel)]="newSurvey.lastimeyouwenttodentist"></ion-input>
+          </ion-item>
+    </ion-card>
 
     <!-- Housing and Urban Infrastructure -->
-    <ion-item-divider color="primary-light">
-      Housing and Urban Infrastructure | Infraestructura
-    </ion-item-divider>
-    <ion-item>
-      <ion-label>What is the condition of the floor in your house? | Cual es la condición del piso  de su casa?</ion-label>
-      <ion-select [(ngModel)]="newSurvey.conditionoFloorinyourhouse" interface ='popover'>
-          <ion-option text-wrap value="dirtPoor"> Dirt Floor and Poor Condition | Tierra y mala condicion  </ion-option>
-          <ion-option text-wrap value="dirtWorking"> Dirt Floor and Working Condition | Tierra regular  </ion-option>
-          <ion-option text-wrap value="cementPoor"> Cement Floor and Poor Condition | Cemento mala condicion </ion-option>
-          <ion-option text-wrap value="cementWorking"> Cement Floor and Working Condition | Cemento Regular  </ion-option>
-      </ion-select>
-    </ion-item>
+    <ion-card>
+      <ion-card-header class="card-title">
+        Infrastructure
+      </ion-card-header>
+      <ion-item-group>
+        <ion-item>
+          <ion-label>21. What is the condition of the floor in your house? | Cual es la condición del piso  de su casa?</ion-label>
+          <ion-select [(ngModel)]="newSurvey.conditionoFloorinyourhouse" interface ='popover'>
+              <ion-option text-wrap value="dirtPoor"> Dirt Floor and Poor Condition | Tierra y mala condicion  </ion-option>
+              <ion-option text-wrap value="dirtWorking"> Dirt Floor and Working Condition | Tierra regular  </ion-option>
+              <ion-option text-wrap value="cementPoor"> Cement Floor and Poor Condition | Cemento mala condicion </ion-option>
+              <ion-option text-wrap value="cementWorking"> Cement Floor and Working Condition | Cemento Regular  </ion-option>
+          </ion-select>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>22. What is the condition of the roof in your house? | Cual es la condición de su techo?</ion-label>
+          <ion-select [(ngModel)]="newSurvey.conditionoRoofinyourhouse" interface ='popover'>
+              <ion-option text-wrap value="poor"> Poor Condition | Mala  </ion-option>
+              <ion-option text-wrap value="working"> Working Condition | Regular  </ion-option>
+          </ion-select>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>23. Are there Available Trash Management and Disposal Services? | Hay servicios para la recogida de basura?</ion-label>
+          <ion-select [(ngModel)]="newSurvey.availableTrashManagementandDisposalServices" interface ='popover'>
+              <ion-option text-wrap value="Yes"> Yes | Si </ion-option>
+              <ion-option text-wrap value="No"> No </ion-option>
+          </ion-select>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label floating>24. What is the Trash Disposal Location? | Donde deja su basura?</ion-label>
+          <ion-input type="text" [(ngModel)]="newSurvey.trashDisposalLocation"></ion-input>
+        </ion-item>
+      </ion-item-group>
+    </ion-card>
 
-    <ion-item>
-      <ion-label>What is the condition of the roof in your house? | Cual es la condición de su techo?</ion-label>
-      <ion-select [(ngModel)]="newSurvey.conditionoRoofinyourhouse" interface ='popover'>
-          <ion-option text-wrap value="poor"> Poor Condition | Mala  </ion-option>
-          <ion-option text-wrap value="working"> Working Condition | Regular  </ion-option>
-      </ion-select>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Are there Available Trash Management and Disposal Services? | Hay servicios para la recogida de basura?</ion-label>
-      <ion-select [(ngModel)]="newSurvey.availableTrashManagementandDisposalServices" interface ='popover'>
-          <ion-option text-wrap value="Yes"> Yes | Si </ion-option>
-          <ion-option text-wrap value="No"> No </ion-option>
-      </ion-select>
-    </ion-item>
-
-    <ion-item>
-      <ion-label floating>What is the Trash Disposal Location? | Donde deja su basura?</ion-label>
-      <ion-input type="text" [(ngModel)]="newSurvey.trashDisposalLocation"></ion-input>
-    </ion-item>
-
-    <!-- Medical Mission -->
-    <ion-item-divider color="primary-light">
-      Medical Mission | Misión Médica
-    </ion-item-divider>
-    <ion-item>
-      <ion-label>Does anyone in your household need immediate care with the following? | Alguien en su familia necesita de los siguientes cuidados?</ion-label>
-      <ion-select  [(ngModel)]="newSurvey.immediateCare" multiple="true"  interface ='popover'>
-        <ion-option value="cleftlip">Cleft lip repair | Reparacion de labios partidos</ion-option>
-        <ion-option value="cleftpalate">Cleft palate repair | Reparacion de frenillo lingual</ion-option>
-        <ion-option value="wart|cyst">Wart or cyst removal | Eliminacion de verrugas o quistes</ion-option>
-        <ion-option value="tumor">Tumor | Tumor</ion-option>
-        <ion-option value="handDeform">Hand deformities| Manos deformes</ion-option>
-        <ion-option value="footDeform">Foot deformity | Pies deformes </ion-option>
-        <ion-option value="nasalDeform">Nasal deformity | Deformidad de nariz</ion-option>
-        <ion-option value="burns|scarring">Severe burns and scarring | Quemaduras o cicatrices severas </ion-option>
-        <ion-option value="hernia">Hernia repair | Reparacion de hernia</ion-option>
-        <ion-option value="earsnosethroate">Ears, nose or throat surgery | Cirugia de oreja, nariz y garganta (especificar)</ion-option>
-        <ion-option value="hip">Hip replacement | Reemplazo de cadera</ion-option>
-        <ion-option value="knee">Knee replacement | Reemplazo de rodilla</ion-option>
-        <ion-option value="shoulder">Shoulder surgery | Cirugía de hombro</ion-option>
-        <ion-option value="otherOrthopedic">Other orthopedic surgery | Otra cirugía ortopédica</ion-option>
-        <ion-option value="cataracts">Cataracts | cataratas </ion-option>
-        <ion-option value="cloudycorneas">Cloudy corneas | Córneas nubladas</ion-option>
-        <ion-option value="otherEyes">Other eye related issue | Otro problema relacionado con los ojos</ion-option>
-        <ion-option value="dentalMolars">Problems with molars |  Problemas muela  molar</ion-option>
-      </ion-select>
-    </ion-item>
-
-    <!-- Feedback and Open-Ended -->
-    <ion-item-divider color="primary-light">
-      Feedback and Open-Ended | Notas
-    </ion-item-divider>
-
-    <ion-item>
-      <ion-label floating>What's the Biggest Problem in the immediate community? | Cual es el problema inmediato más grande en la comunidad?</ion-label>
-      <ion-input type="text" [(ngModel)]="newSurvey.biggestProblemintheimmediatecommunity"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label floating>What's the Biggest Problem in the region? | Cual es el problema más grande en la región?</ion-label>
-      <ion-input type="text" [(ngModel)]="newSurvey.biggestProblemintheregion"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label floating>Together, how can we address and improve the situation? | Juntos cómo podemos mejorar la situación?</ion-label>
-      <ion-input type="text" [(ngModel)]="newSurvey.howCanweaddressandimprovethesituation"></ion-input>
-    </ion-item>
-
-  <!-- Organizational and Administrative -->
-  <ion-item-divider color="primary-light">
-    Organization and Administrative | Administrativo
-  </ion-item-divider>
-
-    <ion-item>
-      <ion-label>Are there other outside organizations within your community or area? | Hay otras organizaciones externas dentro de su comunidad o área?</ion-label>
-      <ion-select [(ngModel)]="newSurvey.otherOrganizationsYouKnow" multiple="true">
-        <ion-option text-wrap >Peace Corps</ion-option>
-        <ion-option text-wrap >Global Glimpse</ion-option>
-        <ion-option text-wrap >Constanza Medical Mission</ion-option>
-        <ion-option text-wrap >World Outreach Foundation</ion-option>
-        <ion-option text-wrap >Puente Desarrollo Internacional</ion-option>
-        <ion-option text-wrap >Maria’s Kids</ion-option>
-        <ion-option text-wrap >FUNJIDO</ion-option>
-        <ion-option text-wrap >Engineers without borders</ion-option>
-        <ion-option text-wrap >Techo</ion-option>
-        <ion-option text-wrap >INVI</ion-option>
-      </ion-select>
-    </ion-item>
+    <ion-card>
+      <ion-card-header class='card-title'>
+        Identification
+      </ion-card-header>
+      <ion-item>
+        <ion-label floating>License Number | Cedula </ion-label>
+        <ion-input type="number" [(ngModel)]="newSurvey.cedulaNumber"></ion-input>
+      </ion-item> 
+    </ion-card>
+    
 
 <!--THIS IS WHERE SURVEY CUTS -->
 
 <!--         Divider               -->
     <!-- Survey-Item Name -->
     <ion-item no-lines>
-      <button ion-button icon-left full round color="accent" (click)="postSurveyConfirm()" (click)="presentToast()">
+      <button ion-button icon-left full block large color="accent" (click)="postSurveyConfirm()" (click)="presentToast()">
         <ion-icon name="checkmark-circle"></ion-icon>
         Submit | Entrega
       </button>
     </ion-item>
 
+  <ion-list text-wrap overflow-scroll="true">  
 <!--         Divider               -->
     <ion-item-divider color="primary">
       Submissions | Entrega
     </ion-item-divider>
-
+  
     <ion-item *ngFor="let surveyPoint of surveyPoints">
       <h2>{{ surveyPoint.get('fname') }}</h2>
       <p>{{ surveyPoint.get('lname') }}</p>
