@@ -7,7 +7,7 @@
 ![](https://img.shields.io/badge/angular_4+-✓-blue.svg)
 ![](https://img.shields.io/badge/parse_server-✓-blueviolet.svg)
 
-## About this Program
+## About this Application
 
 This is a Community Health Records Data Collection Application that integrates Ionic 3, Angular 2+ and Parse Server. It's being used for community development data collection and assessment in the Dominican Republic. 
 
